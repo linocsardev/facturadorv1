@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venta</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/venta.css">
+</head>
+<body onload="inicioFacturador()">
+    <div class="form-container">
+        <form class="form-documento" id="form-documento">
+            <div class="datos_documento">
+                <div class="form-group">      
+                    <select name="vendedor" class="form-control" id="vendedor">
+                        <option value="Administrador">Administrador</option>
+                        <option value="cajero">Cajero</option>
+                        <option value="Vendedor1">Vendedor1</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    
+                    <select name="documento" id="documento" name="documento" class ="form-control">
+                        <option  value="factura">Factura </option>
+                        <option selected value="boleta">Boleta </option>
+                    </select>
+                </div>
+                <div class="form-group documento_serie">
+                    <div class="grupo_serie">
+                        <label for="">Serie</label>
+                        <input type="text" class="form-control" id="serie" disabled readonly>
+                    </div>
+                    <div class="grupo_numero">
+                        <label for="">Numero</label>
+                        <input type="text" class="form-control" id="numeral" disabled>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-success btn-guardar">Guardar venta</button>
+                    <button type="button" class="btn  btn-primary">Ventas</button>
+                </div>
+            </div>
+            <div class="datos_cliente">
+                <div class="form-group col-md-2">
+                    <label for="dni">DNI</label>
+                    <img src="./images/people-circle-outline.svg" onClick="verClientes()" class="icono-clientes" alt="icono-clientes">
+                    <input type="search" class="form-control"  id="dni">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="nombres">Nombres(s)</label>
+                    <input type="text" class="form-control"  id="nombres">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="apellidos">Apellidos(s)</label>
+                    <input type="text" class="form-control"  id="apellidos">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="direccion">Direccion</label>
+                    <input type="text" class="form-control"  id="direccion">
+                </div>
+            </div>
+            <div class="buscar_producto">
+              
+                    <input type="search" class="form-control" width="600px" autocomplete="off" name="productoBuscado" id="producto-buscado" placeholder="Buscar producto..." >
+                    <img src="./images/search-outline.svg" alt="icon_search" class="icon_search">
+                    <div class="grupo-btn col-md-4">
+                        <button type="button" class="btn btn-secondary btn-agregar" onclick="agregarProducto()">+</button>
+                        <button type="button" class="btn btn-warning btn-quitar" onclick="quitarProducto()">Eliminar lista</button>
+                        <button type="button" class="btn btn-primary btn-catalogo" onclick="verCatalogo()">Catalago</button>
+                    </div>
+            </div>
+            <ul class="resultados">
+                
+            </ul>
+    
+        </form>
+        <main class="main">
+            <div class="etiquetas">
+                <label for="" class="col-md-2">Codigo</label>            
+                <label for="" class="col-md-6">Producto</label>                     
+                <label for="" class="col-md-1">Cantidad</label>            
+                <label for="" class="col-md-1">Precio s/.</label>            
+                <label for="" class="col-md-1">Total s/.</label>            
+            </div>
+            <div class="contenedor_item">
+                <form class="form_venta" id="form_venta" name="form_venta">
+                    <div class="form-row venta">
+                        <div class="form-group grupo-codigo col-md-2">                        
+                            <input type="text" class="form-control" name="codigo" id="codigo" value="Item 0" >
+                        </div>
+                        <div class="form-group grupo-producto col-md-6">
+                            
+                            <input type="text" class="form-control" name="producto" id="producto">
+                        </div>
+    
+                        <div class="form-group grupo-cantidad col-md-1">
+                            
+                            <input type="text" class="form-control"  name="cantidad" id="cantidad">
+                        </div>
+                        <div class="form-group grupo-precio col-md-1">
+                            
+                            <input type="text" class="form-control" name="precio" id="precio">
+                        </div>
+                        <div class="form-group grupo-total col-md-1">
+                            
+                            <input type="text" class="form-control" name="total" id="subTotal">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+        </main>
+        <div class="calcular_total">
+            <h4>TOTAL</h4>
+            <h4><span>S/.</span><span class="precio_total"></span></h4>
+        </div>
+            <dialog class="modal_pago">
+                <div class="grupo-total form-group">
+                    <label for="">Total</label>
+                    <h4 class="pago_total"></h4>
+                </div>
+                <div class="grupo_vuelto form-group">
+                    <label for="">Monto de Pago</label>
+                    <input type="text" class="form-control" style="text-align: right;" id="pago-monto" width="100px">
+                </div>
+                <div class="billetes form-group">
+                    <button class="button btn" id="b200">200</button>
+                    <button class="button btn btn-100">100</button>
+                    <button class="button btn btn-50">50</button>
+                    <button class="button btn btn-20">20</button>
+                    <button class="button btn btn-10">10</button>
+                    <button class="button btn btn-secondary btn-igual">=</button>
+                </div>
+                <div class="grupo_vuelto form-group">
+                    <label for="">Vuelto</label>
+                    <h4 class="vuelto"></h4>
+                </div>
+                <div class="grupo-btn form-group">
+                    <button id="cancelar" class="btn btn-danger">Cancelar</button>
+                    <button id="confirmar" class="btn btn-primary">Confirmar</button>
+    
+                </div>
+            </dialog>
+            <dialog class="dialog-clientes">
+                <div class="mostrar-clientes"></div>
+                <button class="btn btn-danger btn-salir-clientes" type="button">Salir</button>
+            </dialog>
+            <dialog class="dialog-catalogo">
+                <div class="mostrar-catalogo"></div>
+                <button class="btn btn-danger btn-salir-catalogo" type="button">Salir</button>
+            </dialog>
+    </div>
+   
+    <script src="./js/venta.js"></script>
+</body>
+</html>

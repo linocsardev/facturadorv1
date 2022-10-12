@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.contenedor_listVentas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 20px;
+}
+.mostrar {
+    width: 90%;
+    margin: auto;
+}
+.btn-vender {
+    margin-bottom: 10px;
+}
+.table-success {
+    text-align: center;
+}
+._datos {
+    cursor: pointer;
+    text-align: right;
+}
+.mostrar_detalle {
+    width: 80%;
+    border: none;
+    margin: auto;
+    height: 100vh;
+    overflow: hidden;
+}
+.voucher_company {
+    width: 100%;
+    height: 100px;
+}
+.voucher_encabezado {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px;
+}
+.voucher_company td {
+    text-align: center;
+}
+.documento_tipo {
+    font-weight: 600;
+}
+.documento_correlativo {
+    border: 1px solid black;
+    
+}
+.documento_correlativo tr td {
+    padding: 5px;
+}
+td img {
+    width: 80px;
+}
+.cuadro_credito {
+    width: inherit;
+    border: 1px solid black;
+    margin: 20px auto;
+    text-align: center;
+}
+.cuadro_credito td {
+    border: 1px solid black;
+}
+.cuadro_credito thead {
+    text-align: center;
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+}
+.cuadro_venta_cliente {
+    padding-left: 10px;
+}
+.title_vendedor, .title_cajero, .title_cliente, .title_dni, .title_direccion {
+    font-weight: 600;
+    color: black;
+    margin: 2px;
+}
+.vendedor, .cajero {
+    font-weight: 700;
+    color: black;
+}
+.nombre_cliente, .apellido_cliente {
+    font-weight: 700;
+    color: darkorchid;
+}
+.title_direccion {
+    margin-left: 10px;
+}
+.cuadro_venta {
+    width: inherit;
+    border: 1px solid black;
+    margin: 20px auto;
+}
+
+.cuadro_venta_fecha {
+    border: 1px solid black;
+    margin: auto;
+}
+.cuadro_fecha {
+    margin: auto;
+    text-align: center;
+}
+
+.tabla_fecha {
+    text-align: center;
+}
+.cuadro_fecha td, .cuadro_fecha td{
+    border: 1px solid black;
+    padding: 7px;
+}
+.cuadro_producto {
+    border: 1px solid black;
+    width: inherit;
+    margin: 20px auto;
+    text-align: center;
+}
+.cuadro_producto td {
+    border: 1px solid black;
+    padding-left: 5px;
+}
+.cuadro_producto thead {
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+.cuadro_producto tbody td {
+    text-align: left;
+    padding: 7px 7px 7px 7px;
+
+}
+.preciofinal {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 80%;
+    margin: 20px auto;
+}
+.preciofinal_numero {
+    width: 20%;
+    text-align: center;
+}

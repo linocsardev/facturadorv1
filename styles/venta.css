@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+}
+.form-container {
+    background-color: antiquewhite;
+    border-radius: 10px;
+    margin: 60px 100px;
+}
+.form-documento {
+    width: 100%;
+    padding: 10px 10px;
+}
+.datos_documento {
+    width: inherit;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#vendedor {
+    background-color: darkolivegreen;
+    color: white;
+    text-align: center;
+}
+#documento {
+    background-color: slateblue;
+    color: white;
+}
+.documento_serie {
+    display: flex;
+}
+.grupo_serie, .grupo_numero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.grupo_serie #serie, .grupo_numero #numeral {
+    width: 50%;
+    text-align: center;
+}
+#vendedor,  #documento {
+    cursor: pointer;
+}
+.documento_serie label {
+    display: block;
+}
+.datos_cliente {
+    border: 1px solid #ced4da;
+    width: inherit;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+.icono-clientes {
+    width: 20px;
+    cursor: pointer;
+    margin-left: 100px;
+}
+.buscar_producto {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    width: inherit;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;  
+}
+
+.icon_search {
+    width: 35px;
+    background-color: skyblue;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.etiquetas{
+    display: flex;
+    justify-content: space-around;
+    text-align: start;
+    
+}
+.etiquetas label {
+    color: gray;
+}
+.main {
+   
+    margin: 0 10px;
+    /* border: 1px solid black; */
+}
+.contenedor_item {
+    border-radius: 5px;
+    background-color: skyblue;
+}
+.form-row {
+    display: flex;
+    justify-content: space-around;
+}
+.form-group input {
+    margin: 5px 0px;
+}
+.btn-primary {
+    color: white;
+}
+.btn-agregar {
+    border: none;
+    min-width: 100px;
+    border-radius: 3px;
+}
+.btn-quitar {
+    border: none;
+    min-width: 100px;
+    border-radius: 3px;
+}
+.calcular_total {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 50px;
+}
+.precio_total {
+    margin-left: 50px;
+}
+
+/* MODAL */
+
+.modal_pago {
+    min-width: 600px;
+    min-height: 400px;
+    margin: auto;
+    border: none;
+    border-radius: 6px;
+    padding: 30px;
+}
+.grupo-total {
+    display: flex;
+    justify-content: space-between;
+}
+.grupo_vuelto{
+    display: flex;
+    justify-content: space-between;
+}
+.billetes {
+    display: flex;
+    justify-content: space-evenly;
+}
+.billetes button {
+    min-width: 80px;
+}
+.btn-200 {
+    background-color: #d63384;
+    color: #fff;
+    border: 1px solid #d63384;
+}
+.btn-100 {
+    background-color: #2b66cd;
+    color: #fff;
+    border: 1px solid #2b66cd;
+}
+.btn-50 {
+    background-color: #fd7e14;
+    color: #fff;
+    border: 1px solid #fd7e14;
+}
+.btn-20 {
+    background-color: brown;
+    color: #fff;
+    border: 1px solid brown;
+}
+.btn-10 {
+    background-color: green;
+    color: #fff;
+    border: 1px solid green;
+}
+.modal_pago .form-group {
+    padding: 5px;
+    margin: 7px;
+}
+.grupo-btn {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    align-items: center;
+}
+.dialog-clientes {
+    min-width: 600px;
+    min-height: 400px;
+    margin: auto;
+    border: none;
+    border-radius: 6px;
+    padding: 30px;
+}
+.datosCliente {
+    cursor: pointer;
+}
+.prod-encontrado {
+    cursor: pointer;
+    background-color: whitesmoke;
+    list-style: none;
+    width: 60%;
+    padding-left: 30px;
+    border-radius: 7px;
+}
+.dialog-catalogo{
+    min-width: 600px;
+    min-height: 400px;
+    margin: auto;
+    border: none;
+    border-radius: 6px;
+    padding: 30px;
+}

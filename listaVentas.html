@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/listaVentas.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+<body onload="iniciar()">
+
+    <div class="contenedor_listVentas">
+
+        <h3>Lista de Ventas</h3>
+        <button class="btn btn-primary btn-vender" onclick="vender()">vender</button>
+        <div class="mostrar">
+            
+        </div>
+    </div>
+    <dialog class="mostrar_detalle">
+        <table class="voucher_company">
+            <tr class="voucher_encabezado">
+                <td><img src="https://www.apifacturador.codicore.com/salidas/logo/db18b5c19e513790389b93f26e49377a.png" alt=""></td>
+                <td>
+                    <table>
+                        <tr><td id="razon_social">CODICORE</td></tr>
+                        <tr><td>Ingeniería de Software</td></tr>
+                    </table>
+                </td>
+                <td>
+                   <table class="documento_correlativo">
+                    <tr><td>RUC: 808008080</td></tr>
+                    <tr><td class= "documento_tipo"></td></tr>
+                    <tr><td>NRO. <span class="co_serie"></span>-<span class="co_numero"></span></td></tr>
+                   </table> 
+                </td>
+            </tr>
+        </table>
+        <table class="cuadro_credito">
+            <thead>
+                <tr>
+                    <td>Referencia</td>
+                    <td>Guia de remisión</td>
+                    <td>Fecha guía de remisión</td>
+                    <td>Condiciones de pago</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Contado</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="cuadro_venta">
+            <tr>
+                <td class="col-md-9 cuadro_venta_cliente">
+                    <p><span class="title_vendedor">Vendedor : </span><span class="vendedor"></span></p>
+                    <p><span class="title_cajero">Cajero : </span><span class = "cajero"></span></p>
+                    <p><span class="title_cliente">Cliente : </span><span class="nombre_cliente"></span><span class="apellido_cliente"></span></p>
+                    <p><span class="title_dni">DNI : </span><span class="dni_cliente"></span><span class="title_direccion">Dirección : </span><span class="direccion_cliente"></span></p>
+                    
+                </td>
+                <td class="col-md-3 cuadro_venta_fecha">
+                    <table class="cuadro_fecha">
+                        <tr>
+                            <td>
+                                <table class="tabla_fecha">
+                                    <tr>Fecha de emision</tr>
+                                    <tr>
+                                        <td>DIA</td>
+                                        <td>MES</td>
+                                        <td>AÑO</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="dia"></td>
+                                        <td class="mes"></td>
+                                        <td class="anio"></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <table class="cuadro_producto">
+            <thead>
+                <tr>
+                    <td>ITEM</td>
+                    <td>CANTIDAD</td>
+                    <td>UNIDAD</td>
+                    <td>DESCRIPCIÓN</td>
+                    <td>P.UNIT</td>
+                    <td>DSCTO</td>
+                    <td>TOTAL</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="item"></td>
+                    <td class="cantidad"></td>
+                    <td class="unidad"></td>
+                    <td class="descripcion"></td>
+                    <td class="precio_unitario"></td>
+                    <td class="descuento"></td>
+                    <td class="subtotal"></td>
+                </tr>
+                <tr class="precio_letras">
+                    <td  colspan="7"> Son Doce con 00/100 soles </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="preciofinal">
+            <h5>S/.</h5>
+            <h5 class="preciofinal_numero">40</h5>
+        </div>
+    </dialog>
+    <script src="./js/listaVentas.js"></script>
+</body>
+</html>
